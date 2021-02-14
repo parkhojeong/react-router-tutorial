@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 
 function Menu(props) {
   const activeStyle = {
@@ -23,8 +23,13 @@ function Menu(props) {
           react 소개
         </NavLink>
       </li>
+      <li>
+        <NavLink to="/posts" activeStyle={activeStyle}>
+          post 목록
+        </NavLink>
+      </li>
     </ul>
   );
 }
 
-export default Menu;
+export default withRouter(Menu);
